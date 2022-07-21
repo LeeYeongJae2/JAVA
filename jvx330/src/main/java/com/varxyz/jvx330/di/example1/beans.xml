@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="foo" class="com.varxyz.jvx330.di.example1.Foo">
+		<constructor-arg ref="bar"/> <!-- 생성자에 bar를 넣겠다 참조관계를 맺는다--> 
+	</bean>
+	
+	<bean name="bar" class="com.varxyz.jvx330.di.example1.Bar"></bean>
+
+	<bean name="foo2" class="com.varxyz.jvx330.di.example1.Foo">
+		<property name="bar" ref="bar"/> <!-- bar에서 property를 참조하겠다는 말-->
+	</bean>
+	
+</beans>
