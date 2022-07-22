@@ -11,7 +11,7 @@ import lombok.ToString;
 
 @Setter
 @Getter
-@AllArgsConstructor
+@AllArgsConstructor // 생성자를 대신해준다
 @ToString // toString 해줘라
 @EqualsAndHashCode //equals 여기서 처리한다
 
