@@ -22,7 +22,7 @@ public class CustomerDao {
 	public List<Customer> findAllCustomers() {
 		String sql = "SELECT cid, email, passwd, name, ssn, phone, regDate FROM Customer";
 
-		return jdbcTemplate.query(sql, new RowMapper<Customer>() {
+		return jdbcTemplate.query(sql, new RowMapper<Customer>() {  // query는 여러개 있을때 사용한다 
 
 			@Override
 			public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -53,7 +53,7 @@ public class CustomerDao {
 	public Customer findCustomerByEmail(String email) {
 		String sql = "SELECT cid, email, passwd, name ,ssn, phone, regDate" + " FROM Customer WHERE email=?";
 
-		return jdbcTemplate.queryForObject(sql, new RowMapper<Customer>() {
+		return jdbcTemplate.queryForObject(sql, new RowMapper<Customer>() { //queryForObject 는 1개만 존재할때 사용한다 안그러면 오류
 
 			@Override
 			public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
